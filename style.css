@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --hue: 194;
+  --bg-color: hsla(var(--hue), 5%, 7%);
+  --bg-icon-color: hsla(var(--hue), 9%, 89%, 1);
+  --text-color: hsla(var(--hue), 40%, 98%, 1);
+  --primary-color: hsla(var(--hue), 98%, 23%, 1);
+  --controls-color: hsla(var(--hue), 0%, 14%);
+  --text-secondary-color: hsla(var(--hue), 6%, 21%, 1);
+
+  font-size: clamp(40%, 1% + 2vw, 62.5%);
+}
+
+html.light {
+  --bg-color: hsla(var(--hue), 40%, 98%);
+  --text-color: hsla(var(--hue), 5%, 7%);
+  --primary-color: hsla(var(--hue), 97%, 31%, 1);
+}
+
+html.light .ph-sun,
+html:not(.light) .ph-moon {
+  display: none;
+}
+
+#toggle-mode {
+  position: absolute;
+  right: 3.2rem;
+  top: 3.2rem;
+  font-size: 4rem;
+  line-height: 0;
+
+  color: var(--text-color);
+  background-color: transparent;
+}
+
+.sr-only {
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+
+  margin: -1px;
+  padding: 0px;
+  border: 0;
+  appearance: none;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+
+  display: grid;
+  height: 100vh;
+  place-content: center;
+}
+
+#app {
+  display: grid;
+  justify-items: center;
+}
+
+#sounds {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.2rem;
+}
+
+#sounds button {
+  align-items: center;
+  justify-content: center;
+  width: 13.8rem;
+  height: 15.2rem;
+}
+
+.active {
+  background: var(--primary-color);
+}
+
+.active img {
+  filter: invert();
+}
+
+.flex {
+  display: flex;
+}
+
+main {
+  display: flex;
+  gap: 19rem;
+}
+
+.min {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14.6rem;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+#controls {
+  margin-top: 1.6rem;
+  gap: 4rem;
+  background-color: transparent;
+}
+
+button {
+  border: 0;
+  border-radius: 2.4rem;
+  color: var(--text-color);
+
+  cursor: pointer;
+
+  font-size: 6.4rem;
+}
+
+/* controls */
+.running .ph-play-circle,
+html:not(.running) .ph-pause-circle {
+  display: none;
+}
+
+.ph-pause-circle {
+  color: var(--primary-color);
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Temporizador estilo pomodoro" />
+    <title>FocusTimer 2.0</title>
+
+    <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-icon" />
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script type="module" src="./src/main.js" defer></script>
+  </head>
+  <body>
+    <button id="toggle-mode">
+      <span class="sr-only">Ativar light mode!</span>
+      <i class="ph-bold ph-sun"></i>
+      <i class="ph-bold ph-moon"></i>
+    </button>
+
+    <div id="app">
+      <main class="flex">
+        <section id="timer" class="flex">
+          <div class="min">
+            <span id="minutes">00</span>
+            <span>:</span>
+            <span id="seconds">00</span>
+          </div>
+
+          <section id="controls" class="flex">
+            <button
+              data-action="toggleRunning"
+              id="controls"
+              class="ph ph-play-circle secondary"
+            >
+              <span class="sr-only">Iniciar contador</span>
+            </button>
+            <button
+              data-action="toggleRunning"
+              id="controls"
+              class="ph ph-pause-circle secondary"
+            >
+              <span class="sr-only">Pausar contador</span>
+            </button>
+            <button
+              data-action="stop"
+              id="controls"
+              class="ph ph-stop-circle secondary"
+            >
+              <span class="sr-only">Parar contador</span>
+            </button>
+            <button
+              data-action="plus"
+              id="controls"
+              class="ph ph ph-plus-circle secondary"
+            >
+              <span class="sr-only">Adicionar tempo</span>
+            </button>
+            <button
+              data-action="minus"
+              id="controls"
+              class="ph ph ph-minus-circle secondary"
+            >
+              <span class="sr-only">Diminuir tempo</span>
+            </button>
+          </section>
+        </section>
+
+        <section id="sounds">
+          <button data-action="forest" id="forest">
+            <img data-action="forest" src="./assets/forest.svg" alt="" />
+          </button>
+          <button data-action="rain" id="rain">
+            <img data-action="rain" src="./assets/rain.svg" alt="" />
+          </button>
+          <button data-action="road" id="road">
+            <img data-action="road" src="./assets/road.svg" alt="" />
+          </button>
+          <button data-action="fire" id="fire">
+            <img data-action="fire" src="./assets/fire.svg" alt="" />
+          </button>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
